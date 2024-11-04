@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trackX - Track Your Device</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <span class="loader"></span>
+    </div>
+
+    <div class="tracking-container">
+        <div style="width: 100%;">
+            <input type="text" class="tracking-input" placeholder="enter your tracking id here" maxlength="14">
+            <div class="dots-container">
+                <!-- Script will generate dots here -->
+            </div>
+        </div>
+        
+        <div class="checkbox-container">
+            <label class="custom-checkbox">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <span class="checkbox-label">I am human</span>
+        </div>
+
+        <button class="submit-btn">SUBMIT</button>
+    </div>
+
+    <div class="tracking-container">
+        <button href="../index.html" class="submit-btn">BACK TO HOMEPAGE</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
