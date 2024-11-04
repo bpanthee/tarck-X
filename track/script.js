@@ -1,7 +1,7 @@
 // Generate dots
 const dotsContainer = document.querySelector('.dots-container');
 const inputWidth = document.querySelector('.tracking-input').offsetWidth;
-const numberOfDots = 40; // Adjust this number to change dot density
+const numberOfDots = 25; // Adjust this number to change dot density
 
 for (let i = 0; i < numberOfDots; i++) {
     const dot = document.createElement('div');
@@ -48,6 +48,27 @@ trackingInput.addEventListener('input', function() {
     if (value.length > 9) value = value.slice(0, 9) + '-' + value.slice(9);
     trackingInput.value = value;
     updateSubmitButton();
+});
+
+// Handle submit button click
+submitBtn.addEventListener('click', function() {
+    if (checkbox.checked && trackingInput.value === "ADSD-34FF-G4DZ") {
+        loadingOverlay.style.display = 'flex';
+        
+        // Disable interaction during loading
+        checkbox.disabled = true;
+        trackingInput.disabled = true;
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            window.location.href = 'data/index.html';
+        }, 2000);
+    } else {
+        alert('Invalid tracking code');
+        checkbox.checked = false;
+        trackingInput.value = '';
+        updateSubmitButton();
+    }
 });
 
 // Initial state
